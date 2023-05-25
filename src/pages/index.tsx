@@ -9,8 +9,8 @@ const Home: NextPageWithLayout = () => {
   return (
     <>
       <Head
-        title="Home"
-        description="Shop all available models only at the ACME. Worldwide Shipping. Secure Payment."
+        title="Market Gate"
+        description="Market Gate vape store"
       />
       <Hero />
       <FeaturedProducts />

@@ -25,6 +25,9 @@
   input:focus ~ label {
     @apply left-0;
   }
+  html{
+    direction: rtl;
+  }
 
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
