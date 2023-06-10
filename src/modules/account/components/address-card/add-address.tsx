@@ -89,17 +89,17 @@ const AddAddress: React.FC = () => {
         className="border border-gray-200 p-5 min-h-[220px] h-full w-full flex flex-col justify-between"
         onClick={open}
       >
-        <span className="text-base-semi">New address</span>
+        <span className="text-base-semi">عنوان جديد</span>
         <Plus size={24} />
       </button>
 
       <Modal isOpen={state} close={handleClose}>
-        <Modal.Title>Add address</Modal.Title>
+        <Modal.Title>اضافة عنوان</Modal.Title>
         <Modal.Body>
           <div className="grid grid-cols-1 gap-y-2">
             <div className="grid grid-cols-2 gap-x-2">
               <Input
-                label="First name"
+                label="اسمك الاول"
                 {...register("first_name", {
                   required: "First name is required",
                 })}
@@ -108,7 +108,7 @@ const AddAddress: React.FC = () => {
                 autoComplete="given-name"
               />
               <Input
-                label="Last name"
+                label="اسمك الاخير"
                 {...register("last_name", {
                   required: "Last name is required",
                 })}
@@ -119,7 +119,7 @@ const AddAddress: React.FC = () => {
             </div>
             <Input label="Company" {...register("company")} errors={errors} />
             <Input
-              label="Address"
+              label="العنوان"
               {...register("address_1", {
                 required: "Address is required",
               })}
@@ -179,10 +179,10 @@ const AddAddress: React.FC = () => {
             className="!bg-gray-200 !text-gray-900 !border-gray-200 min-h-0"
             onClick={handleClose}
           >
-            Cancel
+            الغاء
           </Button>
           <Button className="min-h-0" onClick={submit} disabled={submitting}>
-            Save
+            حفظ
             {submitting && <Spinner />}
           </Button>
         </Modal.Footer>

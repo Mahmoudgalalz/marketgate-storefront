@@ -118,7 +118,7 @@ const AccountInfo = ({
                 className="w-full small:max-w-[140px]"
                 type="submit"
               >
-                Save changes
+                حفظ التغيرات
               </Button>
             </div>
           </div>
