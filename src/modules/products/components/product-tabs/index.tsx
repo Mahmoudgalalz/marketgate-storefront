@@ -15,11 +15,11 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
   const tabs = useMemo(() => {
     return [
       {
-        label: "Product Information",
+        label: "مواصفات المنتج",
         component: <ProductInfoTab product={product} />,
       },
       {
-        label: "Shipping & Returns",
+        label: "التوصيل و الشحن",
         component: <ShippingInfoTab />,
       },
     ]
@@ -35,7 +35,7 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
                 key={i}
                 className={({ selected }) =>
                   clsx(
-                    "text-left uppercase text-small-regular pb-2 -mb-px border-b border-gray-200 transition-color duration-150 ease-in-out",
+                    "text-right uppercase text-small-regular pb-2 -mb-px border-b border-gray-200 transition-color duration-150 ease-in-out",
                     {
                       "border-b border-gray-900": selected,
                     }
@@ -63,25 +63,25 @@ const ProductInfoTab = ({ product }: ProductTabsProps) => {
       <div className="grid grid-cols-2 gap-x-8">
         <div className="flex flex-col gap-y-4">
           <div>
-            <span className="font-semibold">Material</span>
+            <span className="font-semibold">الخامة</span>
             <p>{product.material ? product.material : "-"}</p>
           </div>
           <div>
-            <span className="font-semibold">Country of origin</span>
+            <span className="font-semibold">بلد الانشاء</span>
             <p>{product.origin_country ? product.origin_country : "-"}</p>
           </div>
           <div>
-            <span className="font-semibold">Type</span>
+            <span className="font-semibold">النوع</span>
             <p>{product.type ? product.type.value : "-"}</p>
           </div>
         </div>
         <div className="flex flex-col gap-y-4">
           <div>
-            <span className="font-semibold">Weight</span>
+            <span className="font-semibold">الوزن</span>
             <p>{product.weight ? `${product.weight} g` : "-"}</p>
           </div>
           <div>
-            <span className="font-semibold">Dimensions</span>
+            <span className="font-semibold">الابعاد</span>
             <p>
               {product.length && product.width && product.height
                 ? `${product.length}L x ${product.width}W x ${product.height}H`
@@ -92,7 +92,7 @@ const ProductInfoTab = ({ product }: ProductTabsProps) => {
       </div>
       {product.tags?.length ? (
         <div>
-          <span className="font-semibold">Tags</span>
+          <span className="font-semibold">التضمينات</span>
         </div>
       ) : null}
     </Tab.Panel>
@@ -106,24 +106,13 @@ const ShippingInfoTab = () => {
         <div className="flex items-start gap-x-2">
           <FastDelivery />
           <div>
-            <span className="font-semibold">Fast delivery</span>
+            <span className="font-semibold">اسرع توصيل</span>
             <p className="max-w-sm">
-              Your package will arrive in 3-5 business days at your pick up
-              location or in the comfort of your home.
+              منتجاتك ستصلك خلال ٣-٥ ايام عمل للعنوان المسجل مع الطلب.
             </p>
           </div>
         </div>
-        <div className="flex items-start gap-x-2">
-          <Refresh />
-          <div>
-            <span className="font-semibold">Simple exchanges</span>
-            <p className="max-w-sm">
-              Is the fit not quite right? No worries - we&apos;ll exchange your
-              product for a new one.
-            </p>
-          </div>
-        </div>
-        <div className="flex items-start gap-x-2">
+        {/* <div className="flex items-start gap-x-2">
           <Back />
           <div>
             <span className="font-semibold">Easy returns</span>
@@ -133,7 +122,7 @@ const ShippingInfoTab = () => {
               is hassle-free.
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </Tab.Panel>
   )

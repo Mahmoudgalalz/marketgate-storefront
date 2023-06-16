@@ -51,9 +51,9 @@ const CountrySelect = () => {
             : undefined
         }
       >
-        <Listbox.Button className="py-1 w-full">
+        <Listbox.Button className="py-2 w-full">
           <div className="text-small-regular flex items-center gap-x-2 xsmall:justify-end">
-            <span>Shipping to:</span>
+            <span>شحن الي:</span>
             {current && (
               <span className="text-small-semi flex items-center gap-x-2">
                 <ReactCountryFlag
@@ -69,7 +69,7 @@ const CountrySelect = () => {
             )}
           </div>
         </Listbox.Button>
-        <div className="relative w-full min-w-[316px]">
+        <div className="relative w-full min-w-[222px]">
           <Transition
             show={state}
             as={Fragment}
@@ -78,7 +78,7 @@ const CountrySelect = () => {
             leaveTo="opacity-0"
           >
             <Listbox.Options
-              className="absolute bottom-[calc(100%-36px)] left-0 xsmall:left-auto xsmall:right-0 max-h-[442px] overflow-y-scroll z-[900] bg-white drop-shadow-md text-small-regular uppercase text-black no-scrollbar"
+              className="absolute bottom-0 right-[8rem] xsmall:left-auto max-h-[442px] overflow-y-scroll z-[900] bg-white drop-shadow-md text-small-regular uppercase text-black no-scrollbar"
               static
             >
               {options?.map((o, index) => {
