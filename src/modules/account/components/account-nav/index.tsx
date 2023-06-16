@@ -29,7 +29,7 @@ const AccountNav = () => {
             <ul className="flex mb-0 justify-start items-start flex-col gap-y-4">
               <li>
                 <AccountNavLink href="/account" route={route}>
-                  Overview
+                  نظرة عامة
                 </AccountNavLink>
               </li>
               <li>

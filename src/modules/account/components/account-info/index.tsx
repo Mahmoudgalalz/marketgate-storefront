@@ -22,7 +22,7 @@ const AccountInfo = ({
   isSuccess,
   isError,
   clearState,
-  errorMessage = "An error occurred, please try again",
+  errorMessage = "حدث خطاء!",
   children,
 }: AccountInfoProps) => {
   const { state, close, toggle } = useToggleState()
@@ -58,7 +58,7 @@ const AccountInfo = ({
             onClick={handleToggle}
             type={state ? "reset" : "button"}
           >
-            {state ? "Cancel" : "Edit"}
+            {state ? "الغاء" : "تعديل"}
           </Button>
         </div>
       </div>
@@ -76,7 +76,7 @@ const AccountInfo = ({
           )}
         >
           <div className="bg-green-100 text-green-500 p-4 my-4">
-            <span>{label} updated succesfully</span>
+            <span>{label} تم تعديل</span>
           </div>
         </Disclosure.Panel>
       </Disclosure>

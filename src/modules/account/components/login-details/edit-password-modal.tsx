@@ -47,7 +47,7 @@ const EditPasswordModal: React.FC<EditPasswordModalProps> = ({ customer }) => {
 
     if (data.old_password === data.new_password) {
       setSubmitting(false)
-      setError("New password must be different from old password.")
+      setError("كلمة السر الجديده يجب ان تكون مختلفة")
       return
     }
 
@@ -61,7 +61,7 @@ const EditPasswordModal: React.FC<EditPasswordModalProps> = ({ customer }) => {
       })
 
     if (!passwordMatches) {
-      setError("Old password does not match our records.")
+      setError("كلمة السر القدةيم ليست صحيحة")
       setSubmitting(false)
       return
     }
@@ -80,7 +80,7 @@ const EditPasswordModal: React.FC<EditPasswordModalProps> = ({ customer }) => {
         },
         onError: () => {
           setSubmitting(false)
-          setError("Unable to update password, try again later.")
+          setError("حدث خطاء اثناء تحديث كلمة السر")
         },
       }
     )
@@ -90,22 +90,22 @@ const EditPasswordModal: React.FC<EditPasswordModalProps> = ({ customer }) => {
     <div>
       <EditButton onClick={open} />
       <Modal isOpen={state} close={close}>
-        <Modal.Title>Edit your password</Modal.Title>
+        <Modal.Title>حدث كلمة السر الخاصة بك</Modal.Title>
         <Modal.Body>
           <div className="flex flex-col gap-y-8">
             <Input
-              label="Old password"
+              label="كلمة السر القديمة"
               {...register("old_password", {
-                required: "Old password is required",
+                required: "كلمة السر القديمة مطلوبة",
               })}
               type="password"
               autoComplete="password"
               errors={errors}
             />
             <Input
-              label="New password"
+              label="كلمة السر الجديدة"
               {...register("new_password", {
-                required: "New password is required",
+                required: "مطلوبة",
               })}
               type="password"
               autoComplete="new_password"
@@ -121,10 +121,10 @@ const EditPasswordModal: React.FC<EditPasswordModalProps> = ({ customer }) => {
             className="!bg-gray-200 !text-gray-900 !border-gray-200 min-h-0"
             onClick={close}
           >
-            Cancel
+            الغاء
           </Button>
           <Button className="min-h-0" onClick={submit} disabled={submitting}>
-            Save
+            حفظ
             {submitting && <Spinner />}
           </Button>
         </Modal.Footer>

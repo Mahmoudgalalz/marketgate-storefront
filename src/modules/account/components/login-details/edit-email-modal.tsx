@@ -44,7 +44,7 @@ const EditEmailModal: React.FC<EditEmailModalProps> = ({ customer }) => {
 
     if (data.email === customer.email) {
       setSubmitting(false)
-      setError("You must enter a new email.")
+      setError("يجب ادخال ايميل جديد")
       return
     }
 
@@ -68,16 +68,16 @@ const EditEmailModal: React.FC<EditEmailModalProps> = ({ customer }) => {
     <div>
       <EditButton onClick={open} />
       <Modal isOpen={state} close={close}>
-        <Modal.Title>Edit your email</Modal.Title>
+        <Modal.Title>حدث البريد الالكتروني</Modal.Title>
         <Modal.Body>
           <div className="flex flex-col w-full">
             <Input
-              label="Email"
+              label="البريد الالكتروني"
               {...register("email", {
-                required: "Email is required",
+                required: "البريد الالكتروني مطلوب",
                 pattern: {
                   value: emailRegex,
-                  message: "Must be a valid email",
+                  message: "يجب ان يكون البريد الالكتروني صحيح",
                 },
               })}
               errors={errors}
@@ -92,10 +92,10 @@ const EditEmailModal: React.FC<EditEmailModalProps> = ({ customer }) => {
             className="!bg-gray-200 !text-gray-900 !border-gray-200 min-h-0"
             onClick={close}
           >
-            Cancel
+            الغاء
           </Button>
           <Button className="min-h-0" onClick={submit} disabled={submitting}>
-            Save
+            حفظ
             {submitting && <Spinner />}
           </Button>
         </Modal.Footer>

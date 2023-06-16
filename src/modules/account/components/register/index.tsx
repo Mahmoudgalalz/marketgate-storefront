@@ -49,41 +49,40 @@ const Register = () => {
           <Spinner size={24} />
         </div>
       )}
-      <h1 className="text-large-semi uppercase mb-6">Become a Acme Member</h1>
+      <h1 className="text-large-semi uppercase mb-6">انشاء حساب في MarketGate</h1>
       <p className="text-center text-base-regular text-gray-700 mb-4">
-        Create your Acme Member profile, and get access to an enhanced shopping
-        experience.
+        انشاء حساب لتجربة افضل اثناء التسوق
       </p>
       <form className="w-full flex flex-col" onSubmit={onSubmit}>
         <div className="flex flex-col w-full gap-y-2">
           <Input
-            label="First name"
-            {...register("first_name", { required: "First name is required" })}
+            label="الاسم الاول"
+            {...register("first_name", { required: "الاسم الاول مطلوب" })}
             autoComplete="given-name"
             errors={errors}
           />
           <Input
-            label="Last name"
-            {...register("last_name", { required: "Last name is required" })}
+            label="الاسم الاخير"
+            {...register("last_name", { required: "مطلوب" })}
             autoComplete="family-name"
             errors={errors}
           />
           <Input
-            label="Email"
-            {...register("email", { required: "Email is required" })}
+            label="البريد الالكتروني"
+            {...register("email", { required: "ادخل الايميل" })}
             autoComplete="email"
             errors={errors}
           />
           <Input
-            label="Phone"
+            label="رقم الهاتف"
             {...register("phone")}
             autoComplete="tel"
             errors={errors}
           />
           <Input
-            label="Password"
+            label="كلمة السر"
             {...register("password", {
-              required: "Password is required",
+              required: "ادخل كلمة السر",
             })}
             type="password"
             autoComplete="new-password"
@@ -93,30 +92,30 @@ const Register = () => {
         {authError && (
           <div>
             <span className="text-rose-500 w-full text-small-regular">
-              These credentials do not match our records
+              هذه البيانات غير صحيحه
             </span>
           </div>
         )}
         <span className="text-center text-gray-700 text-small-regular mt-6">
-          By creating an account, you agree to Acme&apos;s{" "}
+          بأنشاء حساب لدي فا انت توافق MarketGate&apos;s{" "}
           <Link href="/content/privacy-policy">
-            <a className="underline">Privacy Policy</a>
+            <a className="underline">الخصوصيات</a>
           </Link>{" "}
           and{" "}
           <Link href="/content/terms-of-use">
-            <a className="underline">Terms of Use</a>
+            <a className="underline">شروط الاستخدام</a>
           </Link>
           .
         </span>
-        <Button className="mt-6">Join</Button>
+        <Button className="mt-6">انضم</Button>
       </form>
       <span className="text-center text-gray-700 text-small-regular mt-6">
-        Already a member?{" "}
+       لديك حساب؟{" "}
         <button
           onClick={() => setCurrentView(LOGIN_VIEW.SIGN_IN)}
           className="underline"
         >
-          Sign in
+          سجل الدخول
         </button>
         .
       </span>

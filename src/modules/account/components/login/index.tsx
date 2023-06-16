@@ -52,13 +52,13 @@ const Login = () => {
       <form className="w-full" onSubmit={onSubmit}>
         <div className="flex flex-col w-full gap-y-2">
           <Input
-            label="Email"
+            label="البريد الالكتروني"
             {...register("email", { required: "Email is required" })}
             autoComplete="email"
             errors={errors}
           />
           <Input
-            label="Password"
+            label="كلمة السر"
             {...register("password", { required: "Password is required" })}
             type="password"
             autoComplete="current-password"

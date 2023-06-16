@@ -79,7 +79,7 @@ const AddAddress: React.FC = () => {
       })
       .catch(() => {
         setSubmitting(false)
-        setError("Failed to add address, please try again.")
+        setError("خطاء اثناء اضافة عنوان جديد")
       })
   })
 
@@ -101,7 +101,7 @@ const AddAddress: React.FC = () => {
               <Input
                 label="اسمك الاول"
                 {...register("first_name", {
-                  required: "First name is required",
+                  required: "الاسم الاول مطلوب",
                 })}
                 required
                 errors={errors}
@@ -110,7 +110,7 @@ const AddAddress: React.FC = () => {
               <Input
                 label="اسمك الاخير"
                 {...register("last_name", {
-                  required: "Last name is required",
+                  required: "الاسم الاخير مطلوب",
                 })}
                 required
                 errors={errors}
@@ -121,32 +121,32 @@ const AddAddress: React.FC = () => {
             <Input
               label="العنوان"
               {...register("address_1", {
-                required: "Address is required",
+                required: "العنوان مطلوب",
               })}
               required
               errors={errors}
               autoComplete="address-line1"
             />
             <Input
-              label="Apartment, suite, etc."
+              label="العنوان بالتفصيل"
               {...register("address_2")}
               errors={errors}
               autoComplete="address-line2"
             />
             <div className="grid grid-cols-[144px_1fr] gap-x-2">
               <Input
-                label="Postal code"
+                label="كود البريد"
                 {...register("postal_code", {
-                  required: "Postal code is required",
+                  required: "كود البريد مطلوب",
                 })}
                 required
                 errors={errors}
                 autoComplete="postal-code"
               />
               <Input
-                label="City"
+                label="المدينة"
                 {...register("city", {
-                  required: "City is required",
+                  required: "المدينة مطلوبه",
                 })}
                 errors={errors}
                 required
@@ -154,7 +154,7 @@ const AddAddress: React.FC = () => {
               />
             </div>
             <Input
-              label="Province / State"
+              label="المحافظة"
               {...register("province")}
               errors={errors}
               autoComplete="address-level1"
@@ -164,7 +164,7 @@ const AddAddress: React.FC = () => {
               autoComplete="country"
             />
             <Input
-              label="Phone"
+              label="رقم الهاتف"
               {...register("phone")}
               errors={errors}
               autoComplete="phone"

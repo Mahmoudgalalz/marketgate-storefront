@@ -52,9 +52,9 @@ const ProfileName: React.FC<MyInformationProps> = ({ customer }) => {
     if (!isValid) {
       setError("old_password", {
         type: "validate",
-        message: "Old password is incorrect",
+        message: "كلمة السر القديمة غير صحيحة",
       })
-      setErrorMessage("Old password is incorrect")
+      setErrorMessage("كلمة السر القديمة غير صحيحة")
 
       return
     }
@@ -62,9 +62,9 @@ const ProfileName: React.FC<MyInformationProps> = ({ customer }) => {
     if (data.new_password !== data.confirm_password) {
       setError("confirm_password", {
         type: "validate",
-        message: "Passwords do not match",
+        message: "كلمة السر القديمة غير صحيح",
       })
-      setErrorMessage("Passwords do not match")
+      setErrorMessage("كلمة السر القديمة غير صحيح")
 
       return
     }
@@ -82,9 +82,9 @@ const ProfileName: React.FC<MyInformationProps> = ({ customer }) => {
       className="w-full"
     >
       <AccountInfo
-        label="Password"
+        label="كلمة السر"
         currentInfo={
-          <span>The password is not shown for security reasons</span>
+          <span>كلمة السر مخفية للامان</span>
         }
         isLoading={isLoading}
         isSuccess={isSuccess}
@@ -94,7 +94,7 @@ const ProfileName: React.FC<MyInformationProps> = ({ customer }) => {
       >
         <div className="grid grid-cols-2 gap-4">
           <Input
-            label="Old password"
+            label="كلمة السر القديمة"
             {...register("old_password", {
               required: true,
             })}
@@ -102,13 +102,13 @@ const ProfileName: React.FC<MyInformationProps> = ({ customer }) => {
             errors={errors}
           />
           <Input
-            label="New password"
+            label="كلمة السر الجديدة"
             type="password"
             {...register("new_password", { required: true })}
             errors={errors}
           />
           <Input
-            label="Confirm password"
+            label="اكد كلمة السر الجديدة"
             type="password"
             {...register("confirm_password", { required: true })}
             errors={errors}

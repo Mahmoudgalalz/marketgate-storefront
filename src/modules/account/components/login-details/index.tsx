@@ -12,11 +12,11 @@ const LoginDetails: React.FC<LoginDetailsProps> = ({ customer }) => {
   return (
     <Detail title="Login">
       <div className="flex flex-col gap-y-4">
-        <Detail.SubDetail title="Email">
+        <Detail.SubDetail title="البريد الالكتروني">
           <span>{customer.email}</span>
           <EditEmailModal customer={customer} />
         </Detail.SubDetail>
-        <Detail.SubDetail title="Password">
+        <Detail.SubDetail title="كلمة السر">
           <span>•••••••••••</span>
           <EditPasswordModal customer={customer} />
         </Detail.SubDetail>
