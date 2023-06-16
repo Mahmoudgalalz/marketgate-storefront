@@ -26,8 +26,8 @@ const PaymentInfoMap: Record<string, { title: string; description: string }> = {
     description: "Secure payment with PayPal",
   },
   manual: {
-    title: "Cash on delivery",
-    description: "Pay cash on delivery",
+    title: "الدفع عند الاستلام",
+    description: "الدفع عند الاستلام",
   },
 }
 
@@ -83,8 +83,12 @@ const PaymentElement = ({
         </div>
       )
     case "manual":
-      // We only display the test payment form if we are in a development environment
-      return process.env.NODE_ENV === "development" ? <PaymentTest /> : null
+      return (
+        <div className="pt-8 pr-7">
+        <PaymentTest /> 
+        </div>
+      )
+      
     default:
       return null
   }

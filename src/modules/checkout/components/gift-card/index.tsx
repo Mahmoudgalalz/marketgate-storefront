@@ -95,7 +95,7 @@ const GiftCard: React.FC<GiftCardProps> = ({ cart }) => {
           <form onSubmit={handleSubmit(onSubmit)} className="w-full">
             <div className="grid grid-cols-[1fr_80px] gap-x-2">
               <Input
-                label="Code"
+                label="قسيمة الشراء"
                 {...register("gift_card_code", {
                   required: "Code is required",
                 })}

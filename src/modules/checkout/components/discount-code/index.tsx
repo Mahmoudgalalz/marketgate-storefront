@@ -66,7 +66,7 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
           setError(
             "discount_code",
             {
-              message: "Code is invalid",
+              message: "الكود خاطئ",
             },
             {
               shouldFocus: true,
@@ -97,7 +97,7 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
         {appliedDiscount ? (
           <div className="flex items-center justify-between">
             <div>
-              <span>Code: </span>
+              <span>الكود: </span>
               <span className="font-semibold">{appliedDiscount}</span>
             </div>
             <div>
@@ -115,7 +115,7 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
           <form onSubmit={handleSubmit(onApply)} className="w-full">
             <div className="grid grid-cols-[1fr_80px] gap-x-2">
               <Input
-                label="Code"
+                label="كود الخصم"
                 {...register("discount_code", {
                   required: "Code is required",
                 })}

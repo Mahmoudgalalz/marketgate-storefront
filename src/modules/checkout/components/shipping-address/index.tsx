@@ -13,7 +13,7 @@ const ShippingAddress = () => {
       {customer && (customer.shipping_addresses?.length || 0) > 0 && (
         <div className="mb-6 flex flex-col gap-y-4 bg-amber-100 p-4">
           <p className="text-small-regular">
-            {`Hi ${customer.first_name}, do you want to use one of your saved addresses?`}
+            {`اهلا ${customer.first_name}, هل ترغب ف استخدام احد العناوين المسجله`}
           </p>
           <AddressSelect addresses={customer.shipping_addresses} />
         </div>
@@ -22,9 +22,9 @@ const ShippingAddress = () => {
         {({ register, formState: { errors, touchedFields } }) => (
           <div className="grid grid-cols-1 gap-y-2">
             <Input
-              label="Email"
+              label="البريد الالكتروني"
               {...register("email", {
-                required: "Email is required",
+                required: "مطلوب",
                 pattern: emailRegex,
               })}
               autoComplete="email"
@@ -33,18 +33,18 @@ const ShippingAddress = () => {
             />
             <div className="grid grid-cols-2 gap-x-2">
               <Input
-                label="First name"
+                label="الاسم الاول"
                 {...register("shipping_address.first_name", {
-                  required: "First name is required",
+                  required: "ملطبو",
                 })}
                 autoComplete="given-name"
                 errors={errors}
                 touched={touchedFields}
               />
               <Input
-                label="Last name"
+                label="الاسم الاخير"
                 {...register("shipping_address.last_name", {
-                  required: "Last name is required",
+                  required: "مطلوب",
                 })}
                 autoComplete="family-name"
                 errors={errors}
@@ -52,23 +52,23 @@ const ShippingAddress = () => {
               />
             </div>
             <Input
-              label="Company"
+              label="الشركة"
               {...register("shipping_address.company")}
               autoComplete="organization"
               errors={errors}
               touched={touchedFields}
             />
             <Input
-              label="Address"
+              label="العنوان"
               {...register("shipping_address.address_1", {
-                required: "Address is required",
+                required: "مطلوب",
               })}
               autoComplete="address-line1"
               errors={errors}
               touched={touchedFields}
             />
             <Input
-              label="Apartments, suite, etc."
+              label="تفاصيل"
               {...register("shipping_address.address_2")}
               autoComplete="address-line2"
               errors={errors}
@@ -76,7 +76,7 @@ const ShippingAddress = () => {
             />
             <div className="grid grid-cols-[122px_1fr] gap-x-2">
               <Input
-                label="Postal code"
+                label="كود البريد"
                 {...register("shipping_address.postal_code", {
                   required: "Postal code is required",
                 })}
@@ -85,7 +85,7 @@ const ShippingAddress = () => {
                 touched={touchedFields}
               />
               <Input
-                label="City"
+                label="المدينة"
                 {...register("shipping_address.city", {
                   required: "City is required",
                 })}
@@ -103,14 +103,14 @@ const ShippingAddress = () => {
               touched={touchedFields}
             />
             <Input
-              label="State / Province"
+              label="المحافظة"
               {...register("shipping_address.province")}
               autoComplete="address-level1"
               errors={errors}
               touched={touchedFields}
             />
             <Input
-              label="Phone"
+              label="رقم الهاتف"
               {...register("shipping_address.phone")}
               autoComplete="tel"
               errors={errors}

@@ -10,7 +10,7 @@ const BillingAddress = () => {
         <div className="grid grid-cols-1 gap-y-2">
           <div className="grid grid-cols-2 gap-x-2">
             <Input
-              label="First name"
+              label="الاسم الاول"
               {...register("billing_address.first_name", {
                 required: "First name is required",
               })}
@@ -19,7 +19,7 @@ const BillingAddress = () => {
               touched={touchedFields}
             />
             <Input
-              label="Last name"
+              label="الاسم الاخير"
               {...register("billing_address.last_name", {
                 required: "Last name is required",
               })}
@@ -29,14 +29,14 @@ const BillingAddress = () => {
             />
           </div>
           <Input
-            label="Company"
+            label="الشركة"
             {...register("billing_address.company")}
             autoComplete="organization"
             errors={errors}
             touched={touchedFields}
           />
           <Input
-            label="Address"
+            label="العنوان"
             {...register("billing_address.address_1", {
               required: "Address is required",
             })}
@@ -45,7 +45,7 @@ const BillingAddress = () => {
             touched={touchedFields}
           />
           <Input
-            label="Apartments, suite, etc."
+            label="تفاصيل العنوان"
             {...register("billing_address.address_2")}
             autoComplete="address-line2"
             errors={errors}
@@ -53,7 +53,7 @@ const BillingAddress = () => {
           />
           <div className="grid grid-cols-[144px_1fr] gap-x-2">
             <Input
-              label="Postal code"
+              label="كود البريد"
               {...register("billing_address.postal_code", {
                 required: "Postal code is required",
               })}
@@ -62,7 +62,7 @@ const BillingAddress = () => {
               touched={touchedFields}
             />
             <Input
-              label="City"
+              label="المدينة"
               {...register("billing_address.city", {
                 required: "City is required",
               })}
@@ -80,14 +80,14 @@ const BillingAddress = () => {
             touched={touchedFields}
           />
           <Input
-            label="State / Province"
+            label="المحافظة"
             {...register("billing_address.province")}
             autoComplete="address-level1"
             errors={errors}
             touched={touchedFields}
           />
           <Input
-            label="Phone"
+            label="رقم الهاتف"
             {...register("billing_address.phone")}
             autoComplete="tel"
             errors={errors}
